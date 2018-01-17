@@ -1,0 +1,174 @@
+/* App box style */
+.grid {
+	margin: auto;
+	max-width: 1000px;
+	/* width: 100%; */
+}
+
+.grid a {
+	float: left;
+	max-width: 250px;
+	width: 33.333%;
+	color: #333;
+}
+
+.grid figure {
+	position: relative;
+	overflow: hidden;
+	margin: 5px;
+	background: #333;
+	border-radius: 15px 15px 15px 15px;	
+}
+
+.grid figure img {
+	position: relative;
+	display: block;
+	width: 100%;
+	opacity: 1;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+	border-radius: 15px 15px 15px 15px;
+}
+
+.grid figcaption {
+	position: absolute;
+	top: 0;
+	z-index: 11;
+	padding: 10px;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+
+}
+
+.grid figcaption h2 {
+	margin: 0 0 -10px 0;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 0px;
+	font-size: 100%;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+	font-weight: 400;
+}
+
+.grid figcaption p {
+	opacity: 0;
+	padding: 10px 15px; 
+	margin-top: 20px; 
+	color: #fff;
+	font-size: 60%;
+	border-top: 1px solid #e38e8e;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transition-delay: 0.05s;
+	transition-delay: 0.05s;
+	font-weight: 400;
+}
+
+.grid figcaption h2,
+.grid figcaption p {
+	-webkit-transform: translateY(10px);
+	transform: translateY(10px);
+	-webkit-transition-timing-function: cubic-bezier(0.250, 0.250, 0.115, 1); /* older webkit */
+	-webkit-transition-timing-function: cubic-bezier(0.250, 0.250, 0.115, 1.445);
+	timing-function: cubic-bezier(0.250, 0.250, 0.115, 1.445);
+}
+
+.grid figure button {
+	position: absolute;
+	padding: 4px 20px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: bold;
+	top: 50%;
+	border: 3px solid #fff;
+	background: transparent;
+	color: #fff;
+	opacity: 0;
+	-webkit-transform: translateY(-50%) translateX(-50%) scale(0.25);
+	transform: translateY(-50%) translateX(-50%) scale(0.25);
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+		
+}
+
+.grid figcaption,
+.grid figcaption h2,
+.grid figcaption p,
+.grid figure button {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+/* Style for SVG */
+.grid svg {
+	position: absolute;
+	top: -1px; /* fixes rendering issue in FF */
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	border-radius: 15px 15px 15px 15px;
+}
+
+.grid svg path {
+	fill: rgb(227,23,62);
+	opacity: .90;
+}
+
+/* Hover effects */
+.grid a:hover figure img {
+	background: #000;
+	opacity: .4;
+}
+
+.grid a:hover figcaption h2,
+.grid a:hover figcaption p {
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
+}
+
+.grid a:hover figcaption p {
+	opacity: 1;
+	letter-spacing: 1px;
+	-webkit-transition-delay: 0s;
+	transition-delay: 0s;
+	-webkit-transition-duration: 0.1s;
+	transition-duration: 0.1s;
+}
+
+.grid a:hover figure button {
+	opacity: 1;
+	-webkit-transform: translateY(-50%) translateX(-50%) scale(1);
+	transform: translateY(-50%) translateX(-50%) scale(1);
+}
+
+
+/* Media Queries */
+/* Let's redefine the width of each anchor and the margins */
+@media screen and (max-width: 80em) {
+	.grid {
+		max-width: 750px;
+	}
+	.grid a {
+		width: 100%;
+	}
+
+}
+
+
+
+@media screen and (max-width: 50em) {
+	.grid {
+		max-width: 500px;
+	}
+}
+
+@media screen and (max-width: 40em) {
+	.grid {
+		max-width: 250px;
+	}
+
+}
+
+
